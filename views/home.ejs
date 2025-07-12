@@ -1,0 +1,21 @@
+<%- include('header') %>
+
+
+<div class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4">Secure Application</h1>
+        <p class="lead">Built with the MERN stack</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a>
+        <a class="btn btn-secondary btn-lg" href="/login" role="button">Login</a>
+</div>
+<% if (typeof alert !== 'undefined' && alert) { %>
+  <div class="alert alert-<%= alert.type %> alert-dismissible fade show" role="alert">
+    <%= alert.message %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+    </div>
+     
+
+<%- include('footer') %>

@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+/*  Header responsive styles */
+.header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h1 {
+    font-size: 24px;
+    color: #e8ebef;
+}
+
+/* secret page styles */
+
+    body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab) !important;
+    min-height: 100vh !important;
+    color: #f0f0f0 !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2rem   ;
+  }
+
+  .text-center {
+  overflow: visible !important;
+  max-height: none !important;
+}
+.display-4{
+     overflow: visible !important;
+  max-height: none !important;
+
+}
+
+  .card.glass {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    color: #f0f0f0 !important;
+    max-width: 300px !important;
+    width: 100%;
+  }
+  .container{
+    margin-top: 2rem !important;
+  }
+
+  .lock-icon {
+    font-size: 3rem !important;
+    text-align: center !important;
+  }
+
+  #confirmation {
+    display: none !important;
+    animation: fadeIn 1s ease-in-out forwards !important;
+    text-align: center !important;
+    font-size: 1.1rem !important;
+    margin-top: 1rem !important;
+    color: #b5ffb3 !important;
+  }
+
+  .btn-submit {
+    background: #00d2ff !important;
+    background: linear-gradient(to right, #3a7bd5, #00d2ff) !important;
+    color: white !important;
+    border: none !important;
+  }
+
+  .btn-submit:hover {
+    opacity: 0.9 !important;
+  }
+  #signup-link {
+    color: #c5ef09 !important;
+    text-decoration: none !important;
+  }
+  #login-link {
+    color: #c5ef09 !important;
+    text-decoration: none !important;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+    
