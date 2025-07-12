@@ -132,18 +132,15 @@ app.post("/signup", async function (req, res) {
   }
 });
 //login authentication
-
-
 app.post("/login", async function (req, res) {
   const { email, password } = req.body;
 
   try {
     const user = await User.findOne({ email });
 
-    
-  if (!user) {
-    return res.render('login', { alert: { type: 'danger', message: 'User not found.' } });
-  }
+    if (!user) {
+      return res.render('login', { alert: { type: 'danger', message: 'User not found.' } });
+    }
 
     const isMatch = await bcrypt.compare(password, user.password);
 
@@ -158,7 +155,7 @@ app.post("/login", async function (req, res) {
       role: user.role
     };
 
-    // Payload for JWT
+    // Create JWT payload
     const payload = {
       username: user.username,
       role: user.role
@@ -167,17 +164,25 @@ app.post("/login", async function (req, res) {
     // Sign the token
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
 
-    
-    // Set the token in a cookie
+    // Optional: Set token as a cookie
+    res.cookie('token', token, {
+      httpOnly: true,
+      maxAge: 3600000
+    });
 
-    res.redirect("/secrets");
+    // Redirect to secrets page
+    return res.redirect("/secrets");
+
   } catch (err) {
     console.error("Login error:", err);
     res.status(500).send("Internal server error.");
   }
-
-
 });
+
+
+
+      
+   
 
 //protected route//
 app.get("/secrets", function(req, res) {
