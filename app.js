@@ -72,7 +72,7 @@ app.use(session({
     ttl: 24 * 60 * 60 // session expiration in seconds
   }),
   cookie: {
-    httpOnly: true,
+    httpsOnly: true,
    
 
     secure: process.env.NODE_ENV === 'production',
@@ -168,7 +168,7 @@ app.post("/login", async function (req, res) {
 
     // Optional: Set token as a cookie
     res.cookie('token', token, {
-      httpOnly: true,
+      httpsOnly: true,
       maxAge: 3600000
     });
 
