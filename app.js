@@ -72,10 +72,10 @@ app.use(session({
     ttl: 24 * 60 * 60 // session expiration in seconds
   }),
   cookie: {
-    httpsOnly: true,
+    httpOnly: true,
    
-
-    secure: process.env.NODE_ENV === 'production',
+     secure:false
+    //secure: process.env.NODE_ENV === 'production',
     maxAge: 24 * 60 * 60 * 1000 // 1 day in ms
   }
 }));
@@ -168,7 +168,7 @@ app.post("/login", async function (req, res) {
 
     // Optional: Set token as a cookie
     res.cookie('token', token, {
-      httpsOnly: true,
+      httpOnly: true,
       maxAge: 3600000
     });
 
