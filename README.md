@@ -8,7 +8,7 @@ A secure and responsive MERN-based web application that allows users to sign up,
 
 - ✅ Secure **User Authentication** (Sign Up / Login)
 - 🔑 **Password Hashing** using Bcrypt
-- 🔐 **Encryption** of sensitive user data with `mongoose-encryption`
+- 🔐 **Encryption** of sensitive user data with `bcrypt`
 - 🍪 **Session Management** using Cookies, JWT, and MongoStore
 - 🛡️ Role-based access support (`user` / `admin`)
 - 📝 Secret storage per user with dynamic rendering
@@ -23,7 +23,7 @@ A secure and responsive MERN-based web application that allows users to sign up,
 | Frontend    | HTML, CSS, JavaScript                      |
 | Backend     | Node.js, Express.js                        |
 | Templates   | EJS                                        |
-| Auth/Security | bcrypt, JWT, cookie-parser, mongoose-encryption |
+| Auth/Security | bcrypt, JWT, cookie-parser,  |
 | Database    | MongoDB (via Mongoose)                    |
 | Sessions    | express-session, connect-mongo            |
 | Deployment  | Render (optional)                         |
