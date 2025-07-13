@@ -166,7 +166,7 @@ app.post("/login", async function (req, res) {
     // Sign the token
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
 
-    // Optional: Set token as a cookie
+    //  Set token as a cookie
     res.cookie('token', token, {
       httpOnly: true,
       maxAge: 3600000
