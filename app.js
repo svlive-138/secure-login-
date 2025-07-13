@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo');
 require('dotenv').config();
 
 
-var app = express();
+const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -194,7 +194,13 @@ app.get("/secrets", function(req, res) {
         res.redirect("/login");
     }
 });
-
+//middleware to check authentication
+function authenticate(req, res, next) {
+  if (req.session && req.session.user) {
+    return next();
+  }
+  return res.status(401).send("Unauthorized: No active session");
+}
 app.post('/save-secrets', authenticate, async (req, res) => {
   try {
     const secret = req.body.secret;
@@ -235,13 +241,6 @@ app.get("/logout", function(req, res) {
 
 
 
-//middleware to check authentication
-function authenticate(req, res, next) {
-  if (req.session && req.session.user) {
-    return next();
-  }
-  return res.status(401).send("Unauthorized: No active session");
-}
 
 app.listen(5000, function() {
   console.log("Server started on port 5000");
